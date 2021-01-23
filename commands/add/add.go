@@ -1,12 +1,10 @@
 package add
 
 import (
-	"bufio"
 	"bytes"
 	"flag"
 	"fmt"
 	"io/ioutil"
-	"os"
 
 	"github.com/atomgenie/ipfs-secure/utils"
 	ipfsshell "github.com/ipfs/go-ipfs-api"
@@ -44,8 +42,7 @@ func Add(argv []string) error {
 	}
 
 	fmt.Println("Password:")
-	reader := bufio.NewReader(os.Stdin)
-	password, _, err := reader.ReadLine()
+	password, err := utils.ReadPassword()
 
 	if err != nil {
 		return err

@@ -23,6 +23,8 @@ func main() {
 		err = add.Add(argv[1:])
 	case "get":
 		err = get.Get(argv[1:])
+	default:
+		fmt.Println("Not a valid command")
 	}
 
 	if err != nil {

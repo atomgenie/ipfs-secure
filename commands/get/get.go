@@ -35,7 +35,7 @@ func Get(argv []string) error {
 	}
 
 	fmt.Println("Password:")
-	password, err := utils.Readline()
+	password, err := utils.ReadPassword()
 
 	if err != nil {
 		return err
